@@ -27,15 +27,7 @@
             link__hover-effect--black
 
             ">Home</a>
-                </li>
-                <li class="nav__link click">
-                    <a href="#projects" class="
-                nav__link--anchor
-                link__hover-effect
-                link__hover-effect--black
-
-                ">All movies</a>
-                </li>
+                
                 <li class="nav__link click">
                     <a href="#" class="
                     nav__link--anchor
@@ -44,13 +36,23 @@
 
                     ">Contact Me</a>
                 </li>
+                <li class="nav__link click">
+                    <a href="#" class="
+                        nav__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black
+                        
+                        "><i class="fas fa-adjust" onclick="toggleContrast()"></i></a>
+                </li>
 
 
             </ul>
         </nav>
 
         <header class="header">
+            
             <div class="img__movie">
+                
                 <div class="background__span"></div>
                 <img class="image__loop" src="./assest/movies1.PNG" alt="">
                 <img class="image__loop" src="./assest/movies2.PNG" alt="">
@@ -59,11 +61,11 @@
             
             <div class="getstarted__btn">
                 <div class="getstarted__wrapper">
-                    <input type="text" placeholder="What movie are you looking?" class="input__email no-outline" 
+                    <input type="text" placeholder="What movie are you looking?" class="input__email no-outline" name="searchBar" id="searchBar" 
                     onchange="onSearchChange(event)"/>
 
                 </div>
-                <button class="btn__get"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="btn__get" onclick="searchMovies()"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </header>
 
@@ -75,7 +77,7 @@
     <section id="latest_books">
         <div class="container">
             <div class="row">
-                <h2 class="section__title"> Latest <span class="text--purple">Books</span></h2>
+                <h2 class="section__title"> Latest <span class="text--purple">movies of <span id="nameofM" onchange="onSearchChange(event)"></span> </span></h2>
                 <div class="latest_books">
                     <div class="movie">
                         <figure class="book__img_wrapper">
@@ -128,8 +130,54 @@
 
             </div>
         </div>
-
+        
     </section>
+
+    <footer>
+        <div class="row footer__row">
+            <a href="#" class="footer_anchor">
+                <figure class="footer__logo">
+                    <img src="./assest/3658959.png" class="footer__logo--img" alt="">
+                </figure>
+                <span class="footer__logo--popper">
+                    Top👻
+                    <i class="lni lni-arrow-up-circle"></i>
+                </span>
+
+
+            </a>
+
+            <div class="footer_social--list-wrapper">
+                <div class="footer__social--list click">
+                    <a href="https://www.github.com/krakatua" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white" target="_blank"> Github </a>
+                </div>
+                <div class="footer__social--list  click">
+                    <a href="https://www.linkedin.com/in/rudis-cordones-bab332210/" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white" target="_blank">Linkedin </a>
+                </div>
+                <div class="footer__social--list  click">
+                    <a href="#" onclick="toggleModal()" class=" 
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white">Contact</a>
+                </div>
+                <div class="footer__social--list  click">
+                    <a href="./assets/Rudis Gomez Resume.pdf" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white" target="_blank">Resume</a>
+                </div>
+                <div class="footer__copyright"> Copyright © 2022 Rudis Cordones</div>
+            </div>
+
+        </div>
+
+    </footer>
 
 
 
