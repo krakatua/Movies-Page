@@ -8,7 +8,7 @@
 const moviesList = document.querySelector(".books")
 
 async function main() {
-    const movies = await fetch ("https://www.omdbapi.com/?apikey=97f5b4c9&s=marvel");
+    const movies = await fetch ("https://www.omdbapi.com/?apikey=97f5b4c9&s=spider");
     const moviesData = await movies.json();
     console.log(moviesData)
     moviesList.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join("");
@@ -40,20 +40,3 @@ function moviesHTML(movie) {
 </div>`
 }
 
-
-
-async function onSearchChange(event) {
-    const name = event.target.Title;
-    renderMovies(Title)
-
-}
-
-
-async function renderMovies(Title) {
-    const moviesSearch = await fetch (`https://www.omdbapi.com/?apikey=97f5b4c9&s=${Title}`)
-    const moviesSearchData = await moviesSearch.json();
-    moviesList.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join("");
-    console.log(moviesSearch)
-}
-
-renderMovies(Title)

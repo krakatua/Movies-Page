@@ -327,16 +327,37 @@ nav {
 
 .books {
     width: 100%;
-    max-width: 1200px;
     display: flex;
-    flex-wrap: wrap;
+    
+    overflow: hidden;
     
 }
+
+@keyframes featured {
+    
+    0% {
+        transform: translate(0);
+    }
+    
+    100% {
+        transform: translate(-1000px);
+    }
+}
+
+
 
 .book {
     width: 25%;
     padding: 24px;
     margin-left: 20px;
+    animation: featured 25000ms infinite alternate-reverse;
+}
+
+
+.movie {
+    width: calc(100%/4);
+    padding: 24px;
+    margin-left: 4px;
 }
 
 .book_img {
@@ -382,4 +403,14 @@ nav {
     text-decoration: line-through;
     padding-right: 6px;
     color: gray;
+}
+
+
+
+.latest_books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1500px;
 }
