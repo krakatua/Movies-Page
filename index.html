@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
+
     <script src="https://kit.fontawesome.com/7bea90c0ec.js" crossorigin="anonymous"></script>
     <title>Movistex</title>
 </head>
@@ -27,9 +27,9 @@
             link__hover-effect--black
 
             ">Home</a>
-                
+
                 <li class="nav__link click">
-                    <a href="#" class="
+                    <a href="./movie.html" class="
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black
@@ -50,23 +50,32 @@
         </nav>
 
         <header class="header">
-            
+
             <div class="img__movie">
-                
+
                 <div class="background__span"></div>
                 <img class="image__loop" src="./assest/movies1.PNG" alt="">
                 <img class="image__loop" src="./assest/movies2.PNG" alt="">
 
             </div>
-            
+
             <div class="getstarted__btn">
                 <div class="getstarted__wrapper">
-                    <input type="text" placeholder="What movie are you looking?" class="input__email no-outline" name="searchBar" id="searchBar" 
-                    onchange="onSearchChange(event)"/>
+                    <input type="text" placeholder="What movie are you looking?" class="input__email no-outline"
+                        name="searchBar" id="searchBar" onchange="onSearchChange(event)" />
 
                 </div>
-                <button class="btn__get" onclick="searchMovies()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <select id="date" onchange="filterMovies(event)">
+                    <option value="" disabled selected>Year</option>
+                    <option value="LOW_TO_HIGH">2020/2022</option>
+                    <option value="HIGH_TO_LOW">2016/2020</option>
+                    <option value="HIGH_TO_LOW">>2015</option>
+                </select>
+                <button class="btn__get" onclick="onSearchChange(event)"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+
             </div>
+
         </header>
 
 
@@ -77,7 +86,8 @@
     <section id="latest_books">
         <div class="container">
             <div class="row">
-                <h2 class="section__title"> Latest <span class="text--purple">movies of <span id="nameofM" onchange="onSearchChange(event)"></span> </span></h2>
+                <h2 class="section__title"> Latest <span class="text--purple">movies of <span id="nameofM"
+                            onchange="onSearchChange(event)"></span> </span></h2>
                 <div class="latest_books">
                     <div class="movie">
                         <figure class="book__img_wrapper">
@@ -93,9 +103,9 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -106,10 +116,10 @@
         <div class="container">
             <div class="row">
                 <h2 class="section__title">
-                    Featured <span class="text--purple">Movies and Series</span> 
+                    Featured <span class="text--purple">Movies and Series</span>
                 </h2>
                 <div class="books">
-                    <div class="book">
+                    <div class="book" onclick="showMoviePost()">
                         <figure class="book__img_wrapper">
                             <img class="book_img" src="">
                         </figure>
@@ -123,14 +133,14 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
 
             </div>
         </div>
-        
+
     </section>
 
     <footer>
@@ -185,6 +195,7 @@
 
     <script src="index.js"></script>
     <script src="search.js"></script>
+    <script src="filter.js"></script>
 </body>
 
 </html>

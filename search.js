@@ -2,9 +2,6 @@ const moviesSearchList = document.querySelector(".latest_books")
 const searchBar = document.getElementById('searchBar')
 
 
-let moviesSearchData = [];
-
-
 /*searchBar.addEventListener('keyup', (e) => {
     const searchString = e.target.value
     console.log(searchString)
@@ -21,36 +18,16 @@ const searchTitle = document.getElementsById("nameofM");
     searchTitle.innerHTML = `${name}`
 */
 
-
 async function onSearchChange(event) {
-
     let name = event.target.value;
-
     renderMovies(name)
-
-
 }
-
-function searchMovies() {
-}
-
-
-
-
-
 async function renderMovies(name) {
     const moviesSearch = await fetch(`https://www.omdbapi.com/?apikey=97f5b4c9&s=${name}`)
-    moviesSearchData = await moviesSearch.json();
-    console.log(moviesSearch)
-
+    const moviesSearchData = await moviesSearch.json();
+    console.log(moviesSearchData)
     moviesSearchList.innerHTML = moviesSearchData.Search.map((movieS) => moviesSearchPost(movieS)).join("");
-
-}
-
-
-
-renderMovies("avengers")
-
+}renderMovies("avengers")
 
 function moviesSearchPost(movieS) {
     return `<div class="movie">
@@ -66,3 +43,21 @@ function moviesSearchPost(movieS) {
 }
 
 
+let movies;
+
+function filterMovies(event){
+    renderMovies()
+}
+
+
+
+
+function toggleContrast() {
+    contrastToggle = !contrastToggle;
+    if (contrastToggle) {
+        document.body.classList += " dark-theme"
+
+    } else {
+        document.body.classList.remove("dark-theme")
+    }
+}

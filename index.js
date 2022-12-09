@@ -24,7 +24,7 @@ main()
 
 
 function moviesHTML(movie) {
-    return `<div class="book">
+    return `<div class="book" onclick="showMoviePost(${movie.imdbID})">
     <figure class="book__img_wrapper">
         <img class="book_img" src=${movie.Poster} alt="">
     </figure>
@@ -51,5 +51,7 @@ function toggleContrast() {
 
 
 
-
-
+function showMoviePost(imdbID) {
+    localStorage.setItem("imdbID", imdbID);
+    window.location.href = `${window.location.imdbID}`
+}
